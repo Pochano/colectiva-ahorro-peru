@@ -147,7 +147,61 @@ export type Campaign = {
   participants: Participant[];
   joined: boolean;
   myQty?: number;
+  zone?: string;
+  isLocal?: boolean;
 };
+
+export type SuggestedCampaign = {
+  productId: string;
+  title: string;
+  goal: number;
+  closesInDays: number;
+  zone: string;
+  confidence: number;
+  predictedDemand: number;
+  interestedMype: number;
+  reason: string;
+};
+
+export const suggestedCampaigns: SuggestedCampaign[] = [
+  {
+    productId: "harina-industrial",
+    title: "Harina de trigo — reposición quincenal",
+    goal: 120,
+    closesInDays: 6,
+    zone: "Cercado y Yanahuara, Arequipa",
+    confidence: 92,
+    predictedDemand: 118,
+    interestedMype: 11,
+    reason:
+      "9 panaderías repiten este insumo cada 14 días y su última compra fue hace 12. La demanda se concentra el fin de semana.",
+  },
+  {
+    productId: "aceite-vegetal",
+    title: "Aceite vegetal — campaña de restaurantes",
+    goal: 160,
+    closesInDays: 8,
+    zone: "Arequipa metropolitana",
+    confidence: 78,
+    predictedDemand: 143,
+    interestedMype: 8,
+    reason:
+      "Los restaurantes del sur subieron 22% su consumo en agosto y aún no hay campaña abierta de aceite.",
+  },
+  {
+    productId: "chocolate-cobertura",
+    title: "Chocolate cobertura — pre campaña de fiestas",
+    goal: 80,
+    closesInDays: 10,
+    zone: "José L. Bustamante, Arequipa",
+    confidence: 64,
+    predictedDemand: 61,
+    interestedMype: 6,
+    reason:
+      "Las pastelerías adelantan compras de cobertura 6 semanas antes de fiestas; el año pasado la demanda se duplicó.",
+  },
+];
+
 
 export const campaigns: Campaign[] = [
   {
