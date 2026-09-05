@@ -33,6 +33,11 @@ function Checkout() {
   const igv = Math.round(subtotal * 0.18);
   const total = subtotal + delivery + igv;
   const saving = (product.marketPrice - unitPrice) * qty;
+  const soloDelivery = 180;
+  const soloTotal = product.marketPrice * qty + soloDelivery + Math.round(product.marketPrice * qty * 0.18);
+  const grupoTotal = total;
+  const totalSaving = soloTotal - grupoTotal;
+  const savingPct = Math.round((totalSaving / soloTotal) * 100);
 
   if (done) {
     return (
