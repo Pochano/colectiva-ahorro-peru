@@ -10,33 +10,198 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AdminRouteImport } from './routes/admin'
+import { Route as AuthRouteImport } from './routes/auth'
+import { Route as CampanasRouteImport } from './routes/campanas'
+import { Route as CatalogoRouteImport } from './routes/catalogo'
+import { Route as CheckoutRouteImport } from './routes/checkout'
+import { Route as DashboardRouteImport } from './routes/dashboard'
+import { Route as PedidosRouteImport } from './routes/pedidos'
+import { Route as ProveedorRouteImport } from './routes/proveedor'
+import { Route as SolicitarRouteImport } from './routes/solicitar'
+import { Route as CampanasIndexRouteImport } from './routes/campanas.index'
+import { Route as CampanasCampaignIdRouteImport } from './routes/campanas.$campaignId'
+import { Route as CatalogoIndexRouteImport } from './routes/catalogo.index'
+import { Route as CatalogoProductIdRouteImport } from './routes/catalogo.$productId'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AdminRoute = AdminRouteImport.update({
+  id: '/admin',
+  path: '/admin',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AuthRoute = AuthRouteImport.update({
+  id: '/auth',
+  path: '/auth',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CampanasRoute = CampanasRouteImport.update({
+  id: '/campanas',
+  path: '/campanas',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CatalogoRoute = CatalogoRouteImport.update({
+  id: '/catalogo',
+  path: '/catalogo',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CheckoutRoute = CheckoutRouteImport.update({
+  id: '/checkout',
+  path: '/checkout',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DashboardRoute = DashboardRouteImport.update({
+  id: '/dashboard',
+  path: '/dashboard',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PedidosRoute = PedidosRouteImport.update({
+  id: '/pedidos',
+  path: '/pedidos',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProveedorRoute = ProveedorRouteImport.update({
+  id: '/proveedor',
+  path: '/proveedor',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SolicitarRoute = SolicitarRouteImport.update({
+  id: '/solicitar',
+  path: '/solicitar',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CampanasIndexRoute = CampanasIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => CampanasRoute,
+} as any)
+const CampanasCampaignIdRoute = CampanasCampaignIdRouteImport.update({
+  id: '/$campaignId',
+  path: '/$campaignId',
+  getParentRoute: () => CampanasRoute,
+} as any)
+const CatalogoIndexRoute = CatalogoIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => CatalogoRoute,
+} as any)
+const CatalogoProductIdRoute = CatalogoProductIdRouteImport.update({
+  id: '/$productId',
+  path: '/$productId',
+  getParentRoute: () => CatalogoRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/admin': typeof AdminRoute
+  '/auth': typeof AuthRoute
+  '/campanas': typeof CampanasRouteWithChildren
+  '/catalogo': typeof CatalogoRouteWithChildren
+  '/checkout': typeof CheckoutRoute
+  '/dashboard': typeof DashboardRoute
+  '/pedidos': typeof PedidosRoute
+  '/proveedor': typeof ProveedorRoute
+  '/solicitar': typeof SolicitarRoute
+  '/campanas/$campaignId': typeof CampanasCampaignIdRoute
+  '/catalogo/$productId': typeof CatalogoProductIdRoute
+  '/campanas/': typeof CampanasIndexRoute
+  '/catalogo/': typeof CatalogoIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/admin': typeof AdminRoute
+  '/auth': typeof AuthRoute
+  '/checkout': typeof CheckoutRoute
+  '/dashboard': typeof DashboardRoute
+  '/pedidos': typeof PedidosRoute
+  '/proveedor': typeof ProveedorRoute
+  '/solicitar': typeof SolicitarRoute
+  '/campanas/$campaignId': typeof CampanasCampaignIdRoute
+  '/catalogo/$productId': typeof CatalogoProductIdRoute
+  '/campanas': typeof CampanasIndexRoute
+  '/catalogo': typeof CatalogoIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/admin': typeof AdminRoute
+  '/auth': typeof AuthRoute
+  '/campanas': typeof CampanasRouteWithChildren
+  '/catalogo': typeof CatalogoRouteWithChildren
+  '/checkout': typeof CheckoutRoute
+  '/dashboard': typeof DashboardRoute
+  '/pedidos': typeof PedidosRoute
+  '/proveedor': typeof ProveedorRoute
+  '/solicitar': typeof SolicitarRoute
+  '/campanas/$campaignId': typeof CampanasCampaignIdRoute
+  '/catalogo/$productId': typeof CatalogoProductIdRoute
+  '/campanas/': typeof CampanasIndexRoute
+  '/catalogo/': typeof CatalogoIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/admin'
+    | '/auth'
+    | '/campanas'
+    | '/catalogo'
+    | '/checkout'
+    | '/dashboard'
+    | '/pedidos'
+    | '/proveedor'
+    | '/solicitar'
+    | '/campanas/$campaignId'
+    | '/catalogo/$productId'
+    | '/campanas/'
+    | '/catalogo/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/admin'
+    | '/auth'
+    | '/checkout'
+    | '/dashboard'
+    | '/pedidos'
+    | '/proveedor'
+    | '/solicitar'
+    | '/campanas/$campaignId'
+    | '/catalogo/$productId'
+    | '/campanas'
+    | '/catalogo'
+  id:
+    | '__root__'
+    | '/'
+    | '/admin'
+    | '/auth'
+    | '/campanas'
+    | '/catalogo'
+    | '/checkout'
+    | '/dashboard'
+    | '/pedidos'
+    | '/proveedor'
+    | '/solicitar'
+    | '/campanas/$campaignId'
+    | '/catalogo/$productId'
+    | '/campanas/'
+    | '/catalogo/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AdminRoute: typeof AdminRoute
+  AuthRoute: typeof AuthRoute
+  CampanasRoute: typeof CampanasRouteWithChildren
+  CatalogoRoute: typeof CatalogoRouteWithChildren
+  CheckoutRoute: typeof CheckoutRoute
+  DashboardRoute: typeof DashboardRoute
+  PedidosRoute: typeof PedidosRoute
+  ProveedorRoute: typeof ProveedorRoute
+  SolicitarRoute: typeof SolicitarRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +213,139 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/admin': {
+      id: '/admin'
+      path: '/admin'
+      fullPath: '/admin'
+      preLoaderRoute: typeof AdminRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/auth': {
+      id: '/auth'
+      path: '/auth'
+      fullPath: '/auth'
+      preLoaderRoute: typeof AuthRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/campanas': {
+      id: '/campanas'
+      path: '/campanas'
+      fullPath: '/campanas'
+      preLoaderRoute: typeof CampanasRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/catalogo': {
+      id: '/catalogo'
+      path: '/catalogo'
+      fullPath: '/catalogo'
+      preLoaderRoute: typeof CatalogoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/checkout': {
+      id: '/checkout'
+      path: '/checkout'
+      fullPath: '/checkout'
+      preLoaderRoute: typeof CheckoutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/dashboard': {
+      id: '/dashboard'
+      path: '/dashboard'
+      fullPath: '/dashboard'
+      preLoaderRoute: typeof DashboardRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/pedidos': {
+      id: '/pedidos'
+      path: '/pedidos'
+      fullPath: '/pedidos'
+      preLoaderRoute: typeof PedidosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/proveedor': {
+      id: '/proveedor'
+      path: '/proveedor'
+      fullPath: '/proveedor'
+      preLoaderRoute: typeof ProveedorRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/solicitar': {
+      id: '/solicitar'
+      path: '/solicitar'
+      fullPath: '/solicitar'
+      preLoaderRoute: typeof SolicitarRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/campanas/': {
+      id: '/campanas/'
+      path: '/'
+      fullPath: '/campanas/'
+      preLoaderRoute: typeof CampanasIndexRouteImport
+      parentRoute: typeof CampanasRoute
+    }
+    '/campanas/$campaignId': {
+      id: '/campanas/$campaignId'
+      path: '/$campaignId'
+      fullPath: '/campanas/$campaignId'
+      preLoaderRoute: typeof CampanasCampaignIdRouteImport
+      parentRoute: typeof CampanasRoute
+    }
+    '/catalogo/': {
+      id: '/catalogo/'
+      path: '/'
+      fullPath: '/catalogo/'
+      preLoaderRoute: typeof CatalogoIndexRouteImport
+      parentRoute: typeof CatalogoRoute
+    }
+    '/catalogo/$productId': {
+      id: '/catalogo/$productId'
+      path: '/$productId'
+      fullPath: '/catalogo/$productId'
+      preLoaderRoute: typeof CatalogoProductIdRouteImport
+      parentRoute: typeof CatalogoRoute
+    }
   }
 }
 
+interface CampanasRouteChildren {
+  CampanasCampaignIdRoute: typeof CampanasCampaignIdRoute
+  CampanasIndexRoute: typeof CampanasIndexRoute
+}
+
+const CampanasRouteChildren: CampanasRouteChildren = {
+  CampanasCampaignIdRoute: CampanasCampaignIdRoute,
+  CampanasIndexRoute: CampanasIndexRoute,
+}
+
+const CampanasRouteWithChildren = CampanasRoute._addFileChildren(
+  CampanasRouteChildren,
+)
+
+interface CatalogoRouteChildren {
+  CatalogoProductIdRoute: typeof CatalogoProductIdRoute
+  CatalogoIndexRoute: typeof CatalogoIndexRoute
+}
+
+const CatalogoRouteChildren: CatalogoRouteChildren = {
+  CatalogoProductIdRoute: CatalogoProductIdRoute,
+  CatalogoIndexRoute: CatalogoIndexRoute,
+}
+
+const CatalogoRouteWithChildren = CatalogoRoute._addFileChildren(
+  CatalogoRouteChildren,
+)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AdminRoute: AdminRoute,
+  AuthRoute: AuthRoute,
+  CampanasRoute: CampanasRouteWithChildren,
+  CatalogoRoute: CatalogoRouteWithChildren,
+  CheckoutRoute: CheckoutRoute,
+  DashboardRoute: DashboardRoute,
+  PedidosRoute: PedidosRoute,
+  ProveedorRoute: ProveedorRoute,
+  SolicitarRoute: SolicitarRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
