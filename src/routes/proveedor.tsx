@@ -33,7 +33,7 @@ export const Route = createFileRoute("/proveedor")({
   component: Proveedor,
 });
 
-const emptyForm = { productId: products[0].id, title: "", goal: "", days: "", zone: "" };
+const emptyForm = { productId: products[0]!.id, title: "", goal: "", days: "", zone: "" };
 
 function Proveedor() {
   const [tab, setTab] = useState<"demanda" | "productos" | "nueva">("demanda");
