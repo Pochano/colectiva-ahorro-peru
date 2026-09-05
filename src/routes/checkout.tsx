@@ -85,6 +85,50 @@ function Checkout() {
           </div>
 
           <div className="mt-5">
+            <SectionTitle>Cuánto ahorras con esta compra</SectionTitle>
+            <div className="card-surface p-4">
+              <div className="grid grid-cols-2 gap-3">
+                <div className="rounded-2xl bg-secondary p-3">
+                  <p className="text-xs font-semibold text-muted-foreground">Comprando solo</p>
+                  <p className="mt-1 text-xl font-extrabold line-through decoration-2">
+                    {soles(soloTotal)}
+                  </p>
+                  <p className="text-[11px] text-muted-foreground">
+                    {soles(product.marketPrice)} × {qty} + flete {soles(soloDelivery)}
+                  </p>
+                </div>
+                <div className="rounded-2xl bg-primary-soft p-3">
+                  <p className="text-xs font-semibold text-primary">Comprando en grupo</p>
+                  <p className="mt-1 text-xl font-extrabold text-primary">{soles(grupoTotal)}</p>
+                  <p className="text-[11px] text-muted-foreground">
+                    {soles(unitPrice)} × {qty} + flete {soles(delivery)}
+                  </p>
+                </div>
+              </div>
+
+              <div className="mt-3 space-y-2 text-sm">
+                <Row label="Ahorro por precio de volumen" value={`- ${soles(saving)}`} />
+                <Row
+                  label="Ahorro por flete compartido"
+                  value={`- ${soles(soloDelivery - delivery)}`}
+                />
+                <div className="my-1 border-t border-border" />
+                <Row label="Ahorro total antes de pagar" value={soles(totalSaving)} strong />
+              </div>
+
+              <div className="mt-3 h-3 w-full overflow-hidden rounded-full bg-muted">
+                <div
+                  className="h-full rounded-full gradient-growth"
+                  style={{ width: `${savingPct}%` }}
+                />
+              </div>
+              <p className="mt-2 text-xs font-bold text-primary">
+                Pagas {savingPct}% menos que comprando por tu cuenta.
+              </p>
+            </div>
+          </div>
+
+          <div className="mt-5">
             <SectionTitle>Entrega</SectionTitle>
             <div className="card-surface space-y-3 p-4 text-sm">
               <p className="inline-flex items-center gap-2 font-semibold">
