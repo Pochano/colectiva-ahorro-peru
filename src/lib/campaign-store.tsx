@@ -2,7 +2,7 @@ import { createContext, useCallback, useContext, useEffect, useMemo, useState, t
 
 import { campaigns as seedCampaigns, getProduct, priceForQty, type Campaign } from "@/lib/mock-data";
 
-const STORAGE_KEY = "juntas-campaigns-v1";
+const STORAGE_KEY = "mayora-campaigns-v1";
 
 export type NewCampaignInput = {
   productId: string;

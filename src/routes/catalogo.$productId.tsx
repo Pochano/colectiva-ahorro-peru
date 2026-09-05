@@ -10,10 +10,10 @@ import { campaigns, getProduct, priceForQty, products, soles } from "@/lib/mock-
 export const Route = createFileRoute("/catalogo/$productId")({
   head: ({ params }) => {
     const p = getProduct(params.productId);
-    const title = p ? `${p.name} — precios por volumen | Juntas` : "Producto — Juntas";
+    const title = p ? `${p.name} — precios por volumen | Mayora` : "Producto — Mayora";
     const description = p
       ? `${p.name} (${p.unit}) de ${p.supplier}. Desde ${soles(p.tiers[p.tiers.length - 1].price)} comprando en grupo.`
-      : "Insumo mayorista en Juntas.";
+      : "Insumo mayorista en Mayora.";
     return {
       meta: [
         { title },

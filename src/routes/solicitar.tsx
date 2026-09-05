@@ -8,13 +8,13 @@ import { PrimaryButton, SectionTitle } from "@/components/ui-bits";
 export const Route = createFileRoute("/solicitar")({
   head: () => ({
     meta: [
-      { title: "Solicitar un insumo no disponible — Juntas" },
+      { title: "Solicitar un insumo no disponible — Mayora" },
       {
         name: "description",
         content:
           "Pide un insumo que aún no está en el catálogo y buscamos proveedores mayoristas en Arequipa para abrir una campaña.",
       },
-      { property: "og:title", content: "Solicitar un insumo no disponible — Juntas" },
+      { property: "og:title", content: "Solicitar un insumo no disponible — Mayora" },
       { property: "og:description", content: "Cuéntanos qué insumo necesitas y en qué volumen." },
     ],
   }),

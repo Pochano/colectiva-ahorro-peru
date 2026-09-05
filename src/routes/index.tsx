@@ -1,21 +1,22 @@
 import { Link, createFileRoute } from "@tanstack/react-router";
-import { ArrowRight, HandCoins, PiggyBank, ShieldCheck, Sprout, Users } from "lucide-react";
+import { ArrowRight, HandCoins, PiggyBank, ShieldCheck, Users } from "lucide-react";
 
 import { CampaignCard } from "@/components/CampaignCard";
 import { SectionTitle, Stars } from "@/components/ui-bits";
 import hero from "@/assets/hero.jpg";
 import { campaigns, suppliers } from "@/lib/mock-data";
+import logoMayora from "@/assets/logo-mayora.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Juntas — Compras colectivas para MYPE en Arequipa" },
+      { title: "Mayora — Compras colectivas para MYPE en Arequipa" },
       {
         name: "description",
         content:
           "Une tu pedido con otras panaderías, pastelerías y cafeterías de Arequipa y accede a precios de mayoreo en harina, azúcar, chocolate y aceite.",
       },
-      { property: "og:title", content: "Juntas — Compras colectivas para MYPE" },
+      { property: "og:title", content: "Mayora — Compras colectivas para MYPE" },
       {
         property: "og:description",
         content: "Compra en grupo, paga precio de mayorista. Marketplace B2B para MYPE peruanas.",
@@ -48,10 +49,8 @@ function Landing() {
     <div className="min-h-screen bg-background">
       <header className="sticky top-0 z-40 border-b border-border bg-card/90 backdrop-blur">
         <div className="mx-auto flex max-w-6xl items-center gap-3 px-4 py-3">
-          <span className="grid size-10 shrink-0 place-items-center rounded-2xl gradient-growth text-primary-foreground">
-            <Sprout className="size-5" />
-          </span>
-          <p className="min-w-0 flex-1 truncate text-lg font-extrabold">Juntas</p>
+          <img src={logoMayora} alt="Mayora" className="size-10 shrink-0 rounded-2xl object-contain" />
+          <p className="min-w-0 flex-1 truncate text-lg font-extrabold">Mayora</p>
           <Link
             to="/auth"
             className="shrink-0 rounded-full px-3 py-2 text-sm font-semibold text-muted-foreground"
@@ -78,7 +77,7 @@ function Landing() {
             <span className="text-primary">aunque seas pequeño</span>
           </h1>
           <p className="mt-4 text-base text-muted-foreground">
-            Los mayoristas venden desde 100 sacos y tu panadería necesita 12. Con Juntas, varias
+            Los mayoristas venden desde 100 sacos y tu panadería necesita 12. Con Mayora, varias
             MYPE unen su pedido, llegan al mínimo y todas pagan precio de mayoreo.
           </p>
           <div className="mt-6 flex flex-col gap-3 sm:flex-row">
@@ -174,7 +173,7 @@ function Landing() {
 
       <footer className="border-t border-border bg-card px-4 py-8">
         <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-3 text-sm text-muted-foreground">
-          <p className="font-bold text-foreground">Juntas · Prototipo de demo</p>
+          <p className="font-bold text-foreground">Mayora · Prototipo de demo</p>
           <div className="flex flex-wrap gap-4">
             <Link to="/proveedor">Soy proveedor</Link>
             <Link to="/admin">Administración</Link>

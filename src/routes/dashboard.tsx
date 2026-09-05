@@ -16,13 +16,13 @@ import {
 export const Route = createFileRoute("/dashboard")({
   head: () => ({
     meta: [
-      { title: "Mi panel — Juntas" },
+      { title: "Mi panel — Mayora" },
       {
         name: "description",
         content:
           "Campañas en las que participas, pedidos próximos y tu ahorro acumulado comprando en grupo.",
       },
-      { property: "og:title", content: "Mi panel — Juntas" },
+      { property: "og:title", content: "Mi panel — Mayora" },
       {
         property: "og:description",
         content: "Panel de la MYPE: campañas, pedidos y ahorro acumulado.",

@@ -10,13 +10,13 @@ import { cn } from "@/lib/utils";
 export const Route = createFileRoute("/catalogo/")({
   head: () => ({
     meta: [
-      { title: "Catálogo de insumos mayoristas — Juntas" },
+      { title: "Catálogo de insumos mayoristas — Mayora" },
       {
         name: "description",
         content:
           "Harina, azúcar, chocolate, margarina y aceite de proveedores mayoristas de Arequipa, con precio de referencia y cantidad mínima.",
       },
-      { property: "og:title", content: "Catálogo de insumos mayoristas — Juntas" },
+      { property: "og:title", content: "Catálogo de insumos mayoristas — Mayora" },
       {
         property: "og:description",
         content: "Explora insumos por categoría, proveedor, precio y cantidad mínima.",

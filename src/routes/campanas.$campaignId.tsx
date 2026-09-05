@@ -12,10 +12,10 @@ import { cn } from "@/lib/utils";
 export const Route = createFileRoute("/campanas/$campaignId")({
   head: ({ params }) => {
     const c = getCampaign(params.campaignId);
-    const title = c ? `${c.title} — ${c.committed}/${c.goal} comprometidos | Juntas` : "Campaña — Juntas";
+    const title = c ? `${c.title} — ${c.committed}/${c.goal} comprometidos | Mayora` : "Campaña — Mayora";
     const description = c
       ? `Faltan ${Math.max(0, c.goal - c.committed)} unidades para desbloquear ${soles(c.bestPrice)} por unidad. Súmate a la compra colectiva.`
-      : "Campaña de compra colectiva en Juntas.";
+      : "Campaña de compra colectiva en Mayora.";
     return {
       meta: [
         { title },

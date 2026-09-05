@@ -9,13 +9,13 @@ import { cn } from "@/lib/utils";
 export const Route = createFileRoute("/pedidos")({
   head: () => ({
     meta: [
-      { title: "Mis pedidos e historial — Juntas" },
+      { title: "Mis pedidos e historial — Mayora" },
       {
         name: "description",
         content:
           "Sigue el estado de tus pedidos colectivos: pendiente, confirmado, en camino y entregado, con tu historial de compras.",
       },
-      { property: "og:title", content: "Mis pedidos e historial — Juntas" },
+      { property: "og:title", content: "Mis pedidos e historial — Mayora" },
       { property: "og:description", content: "Estado de pedidos e historial de compras." },
     ],
   }),

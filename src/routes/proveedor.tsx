@@ -20,13 +20,13 @@ import { cn } from "@/lib/utils";
 export const Route = createFileRoute("/proveedor")({
   head: () => ({
     meta: [
-      { title: "Panel del proveedor — Juntas" },
+      { title: "Panel del proveedor — Mayora" },
       {
         name: "description",
         content:
           "Publica productos, define precios por volumen y sigue cuánta demanda agregan tus campañas colectivas.",
       },
-      { property: "og:title", content: "Panel del proveedor — Juntas" },
+      { property: "og:title", content: "Panel del proveedor — Mayora" },
       { property: "og:description", content: "Demanda agregada, precios por volumen y campañas." },
     ],
   }),
@@ -195,41 +195,53 @@ function Proveedor() {
                 const p = getProduct(s.productId)!;
                 const price = priceForQty(p.tiers, s.goal);
                 return (
-                  <div key={s.productId} className="card-surface p-4">
-                    <div className="grid grid-cols-[auto_minmax(0,1fr)_auto] items-center gap-3">
+                  <div
+                    key={s.productId}
+                    className="relative overflow-hidden rounded-[2rem] border border-dashed border-accent/70 bg-accent-soft/70 p-4 shadow-none"
+                  >
+                    <div className="absolute -right-10 -top-12 size-28 rounded-full bg-accent/20" />
+                    <div className="relative flex items-start justify-between gap-4">
+                      <div>
+                        <span className="inline-flex items-center gap-1 rounded-full bg-card/80 px-2.5 py-1 text-[11px] font-extrabold uppercase tracking-wide text-accent-foreground">
+                          <Sparkles className="size-3" /> Oportunidad sugerida
+                        </span>
+                        <h3 className="mt-3 text-lg font-extrabold leading-tight text-accent-foreground">
+                          {s.title}
+                        </h3>
+                        <p className="mt-1 text-xs font-semibold text-accent-foreground/75">
+                          {p.unit} · {s.zone}
+                        </p>
+                      </div>
                       <img
                         src={p.image}
                         alt={p.name}
                         loading="lazy"
                         width={768}
                         height={768}
-                        className="size-12 shrink-0 rounded-2xl bg-secondary object-cover"
+                        className="size-16 shrink-0 rounded-[1.4rem] border-4 border-card/80 bg-card object-cover shadow-[var(--shadow-card)]"
                       />
-                      <div className="min-w-0">
-                        <p className="truncate font-bold">{s.title}</p>
-                        <p className="truncate text-xs text-muted-foreground">
-                          {p.unit} · {s.zone}
-                        </p>
-                      </div>
-                      <span className="inline-flex shrink-0 items-center gap-1 rounded-full bg-trust-soft px-2 py-1 text-[11px] font-bold text-trust">
-                        <Sparkles className="size-3" /> {s.confidence}%
-                      </span>
                     </div>
 
-                    <p className="mt-3 text-xs text-muted-foreground">{s.reason}</p>
+                    <p className="relative mt-4 rounded-2xl bg-card/70 p-3 text-xs font-medium text-muted-foreground">
+                      {s.reason}
+                    </p>
 
-                    <div className="mt-3 grid grid-cols-3 gap-2 text-center text-[11px]">
-                      <div className="rounded-xl bg-secondary p-2">
-                        <p className="text-muted-foreground">Demanda prevista</p>
-                        <p className="text-sm font-bold">{s.predictedDemand}</p>
+                    <div className="relative mt-4 grid grid-cols-3 divide-x divide-accent-foreground/15 rounded-2xl bg-card/75 p-3 text-[11px]">
+                      <div className="pr-2">
+                        <p className="text-muted-foreground">Demanda</p>
+                        <p className="mt-1 text-sm font-extrabold text-foreground">
+                          {s.predictedDemand}
+                        </p>
                       </div>
-                      <div className="rounded-xl bg-secondary p-2">
-                        <p className="text-muted-foreground">MYPE interesadas</p>
-                        <p className="text-sm font-bold">{s.interestedMype}</p>
+                      <div className="px-2">
+                        <p className="text-muted-foreground">Interés</p>
+                        <p className="mt-1 text-sm font-extrabold text-foreground">
+                          {s.interestedMype} MYPE
+                        </p>
                       </div>
-                      <div className="rounded-xl bg-primary-soft p-2">
-                        <p className="text-primary">Ingreso estimado</p>
-                        <p className="text-sm font-extrabold text-primary">
+                      <div className="pl-2">
+                        <p className="text-muted-foreground">Potencial</p>
+                        <p className="mt-1 text-sm font-extrabold text-primary">
                           {soles(s.goal * price)}
                         </p>
                       </div>
@@ -237,9 +249,12 @@ function Proveedor() {
 
                     <button
                       onClick={() => useSuggestion(s)}
-                      className="mt-3 w-full rounded-2xl bg-secondary py-2.5 text-sm font-bold text-primary"
+                      className="relative mt-4 flex w-full items-center justify-between rounded-2xl bg-accent px-4 py-3 text-sm font-extrabold text-accent-foreground"
                     >
-                      Usar esta sugerencia
+                      Preparar campaña
+                      <span className="rounded-full bg-card/70 px-2 py-1 text-[11px]">
+                        {s.confidence}% afinidad
+                      </span>
                     </button>
                   </div>
                 );

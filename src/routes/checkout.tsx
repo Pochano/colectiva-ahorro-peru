@@ -9,13 +9,13 @@ import { campaigns, campaignProduct, soles } from "@/lib/mock-data";
 export const Route = createFileRoute("/checkout")({
   head: () => ({
     meta: [
-      { title: "Confirmar pedido colectivo — Juntas" },
+      { title: "Confirmar pedido colectivo — Mayora" },
       {
         name: "description",
         content:
           "Revisa cantidad, precio aplicado por volumen, costo de entrega y total antes de confirmar tu pedido colectivo.",
       },
-      { property: "og:title", content: "Confirmar pedido colectivo — Juntas" },
+      { property: "og:title", content: "Confirmar pedido colectivo — Mayora" },
       { property: "og:description", content: "Cantidad, precio aplicado, entrega y total." },
     ],
   }),

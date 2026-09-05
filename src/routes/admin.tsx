@@ -8,13 +8,13 @@ import { campaignProduct, campaigns, soles, suppliers } from "@/lib/mock-data";
 export const Route = createFileRoute("/admin")({
   head: () => ({
     meta: [
-      { title: "Panel administrativo — Juntas" },
+      { title: "Panel administrativo — Mayora" },
       {
         name: "description",
         content:
           "Métricas generales de la plataforma: campañas activas, MYPE registradas, proveedores y volumen transado.",
       },
-      { property: "og:title", content: "Panel administrativo — Juntas" },
+      { property: "og:title", content: "Panel administrativo — Mayora" },
       { property: "og:description", content: "Campañas, usuarios y métricas de la plataforma." },
     ],
   }),

@@ -7,12 +7,12 @@ import {
   Store,
   Users,
   ChevronLeft,
-  Sprout,
 } from "lucide-react";
 import { useState, type ReactNode } from "react";
 
 import { notifications, currentMype } from "@/lib/mock-data";
 import { cn } from "@/lib/utils";
+import logoMayora from "@/assets/logo-mayora.png";
 
 const navItems = [
   { to: "/dashboard", label: "Inicio", icon: Home },
@@ -50,12 +50,12 @@ export function AppShell({
               <ChevronLeft className="size-5" />
             </Link>
           ) : (
-            <Link to="/" className="grid size-10 shrink-0 place-items-center rounded-2xl gradient-growth text-primary-foreground">
-              <Sprout className="size-5" />
+            <Link to="/" className="grid size-10 shrink-0 place-items-center overflow-hidden rounded-2xl bg-card">
+              <img src={logoMayora} alt="Mayora" className="size-full object-contain" />
             </Link>
           )}
           <div className="min-w-0 flex-1">
-            <p className="truncate text-base font-bold">{title ?? "Juntas"}</p>
+            <p className="truncate text-base font-bold">{title ?? "Mayora"}</p>
             <p className="truncate text-xs text-muted-foreground">
               {subtitle ?? `${currentMype.name} · ${currentMype.location}`}
             </p>

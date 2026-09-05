@@ -8,13 +8,13 @@ import { useCampaigns } from "@/lib/campaign-store";
 export const Route = createFileRoute("/campanas/")({
   head: () => ({
     meta: [
-      { title: "Campañas colectivas activas — Juntas" },
+      { title: "Campañas colectivas activas — Mayora" },
       {
         name: "description",
         content:
           "Campañas de compra colectiva abiertas en Arequipa: harina, azúcar y chocolate con precio mayorista al alcanzar la meta.",
       },
-      { property: "og:title", content: "Campañas colectivas activas — Juntas" },
+      { property: "og:title", content: "Campañas colectivas activas — Mayora" },
       {
         property: "og:description",
         content: "Súmate a una campaña y desbloquea el precio de mayoreo.",

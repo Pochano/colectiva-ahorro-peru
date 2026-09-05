@@ -1,19 +1,20 @@
 import { Link, createFileRoute } from "@tanstack/react-router";
-import { Sprout, Store, Users } from "lucide-react";
+import { Store, Users } from "lucide-react";
 import { useState } from "react";
 
 import { PrimaryButton } from "@/components/ui-bits";
 import { cn } from "@/lib/utils";
+import logoMayora from "@/assets/logo-mayora.png";
 
 export const Route = createFileRoute("/auth")({
   head: () => ({
     meta: [
-      { title: "Ingresar o registrarse — Juntas" },
+      { title: "Ingresar o registrarse — Mayora" },
       {
         name: "description",
-        content: "Accede como MYPE compradora o como proveedor mayorista en Juntas.",
+        content: "Accede como MYPE compradora o como proveedor mayorista en Mayora.",
       },
-      { property: "og:title", content: "Ingresar o registrarse — Juntas" },
+      { property: "og:title", content: "Ingresar o registrarse — Mayora" },
       { property: "og:description", content: "Acceso para MYPE compradoras y proveedores." },
     ],
   }),
@@ -27,10 +28,8 @@ function AuthPage() {
   return (
     <div className="flex min-h-screen flex-col items-center justify-center bg-background px-4 py-10">
       <Link to="/" className="mb-6 flex items-center gap-2">
-        <span className="grid size-11 place-items-center rounded-2xl gradient-growth text-primary-foreground">
-          <Sprout className="size-5" />
-        </span>
-        <span className="text-2xl font-extrabold">Juntas</span>
+        <img src={logoMayora} alt="Mayora" className="size-11 rounded-2xl object-contain" />
+        <span className="text-2xl font-extrabold">Mayora</span>
       </Link>
 
       <div className="card-surface w-full max-w-md p-5">
