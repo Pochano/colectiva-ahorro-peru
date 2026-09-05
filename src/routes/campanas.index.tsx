@@ -3,7 +3,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { AppShell } from "@/components/AppShell";
 import { CampaignCard } from "@/components/CampaignCard";
 import { SectionTitle } from "@/components/ui-bits";
-import { campaigns } from "@/lib/mock-data";
+import { useCampaigns } from "@/lib/campaign-store";
 
 export const Route = createFileRoute("/campanas/")({
   head: () => ({
@@ -25,6 +25,8 @@ export const Route = createFileRoute("/campanas/")({
 });
 
 function CampaignList() {
+  const { campaigns } = useCampaigns();
+
   return (
     <AppShell title="Campañas colectivas" subtitle="Arequipa · cierran esta semana">
       <SectionTitle>Cerca de la meta</SectionTitle>

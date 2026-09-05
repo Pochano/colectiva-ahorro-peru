@@ -5,6 +5,7 @@ import { useState } from "react";
 import { AppShell } from "@/components/AppShell";
 import { CampaignProgress } from "@/components/CampaignProgress";
 import { PrimaryButton, SectionTitle, Stars } from "@/components/ui-bits";
+import { useCampaigns } from "@/lib/campaign-store";
 import { campaignProduct, campaigns, getCampaign, soles } from "@/lib/mock-data";
 import { cn } from "@/lib/utils";
 
@@ -29,7 +30,8 @@ export const Route = createFileRoute("/campanas/$campaignId")({
 
 function CampaignDetail() {
   const { campaignId } = Route.useParams();
-  const campaign = getCampaign(campaignId) ?? campaigns[0];
+  const { campaigns: allCampaigns } = useCampaigns();
+  const campaign = allCampaigns.find((c) => c.id === campaignId) ?? campaigns[0];
   const product = campaignProduct(campaign);
   const [qty, setQty] = useState(campaign.myQty ?? 10);
   const unitWord = product.unit.split(" ")[0];
