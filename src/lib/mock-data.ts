@@ -69,7 +69,7 @@ export const products: Product[] = [
     ],
   },
   {
-    id: "chocolate-coberturа",
+    id: "chocolate-cobertura",
     name: "Chocolate cobertura 60%",
     unit: "caja 10 kg",
     category: "Repostería",
@@ -189,7 +189,7 @@ export const campaigns: Campaign[] = [
   },
   {
     id: "chocolate-set",
-    productId: "chocolate-coberturа",
+    productId: "chocolate-cobertura",
     title: "Chocolate cobertura — nueva campaña",
     committed: 8,
     goal: 40,
