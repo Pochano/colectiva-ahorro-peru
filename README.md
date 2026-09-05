@@ -172,17 +172,14 @@ mock y navegación simulada entre pantallas
 
 Que sea WEB APP RESPONSIVE, idealmente para celular. Utiliza esta plantilla de referencia para el diseño
 
-This project was built with [Lovable](https://lovable.dev).
-
 **Live app**: https://colectiva-ahorro-peru.lovable.app
 
-## Build with Lovable
+## Contributors:
 
-Continue developing this project in the [Lovable editor](https://lovable.dev/projects/21ede941-5a8b-4284-9416-774270d6f1f5).
-
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: every change made in Lovable is committed straight to this repository.
-- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
+- Pochano Valdivia
+- Chu chu Pamela
+- Mili
+- Diana
 
 ## Development
 
